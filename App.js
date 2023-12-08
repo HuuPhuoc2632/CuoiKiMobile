@@ -5,18 +5,20 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Screen_02 from './screen/Screen_02';
 import { Provider } from 'react-redux';
-
+import store from './redux/store';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
 
   return (
-    <NavigationContainer>
+<Provider store={store}>
+<NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Screen_01" component={Screen_01} />
         <Stack.Screen name="Screen_02" component={Screen_02} />
       </Stack.Navigator>
     </NavigationContainer>
+</Provider>
    
   );
 }

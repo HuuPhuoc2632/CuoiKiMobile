@@ -17,7 +17,7 @@ export default function Screen_01() {
     const user = await res.json();
     const currentUser = user.find(u => u.email === email && u.password === password);
     if (currentUser) {
-        navigation.navigate('Screen_02');
+        navigation.navigate('Screen_02', currentUser);
     } else {
         alert('Wrong email or password');
     }
